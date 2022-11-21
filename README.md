@@ -1,24 +1,63 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column              | Type    | Options                   |
+| ------              | ------- | ------------------------- |
+| nickname            | string  | null: false               |
+| email               | string  | null: false, unique: true |
+| encrypted_password  | string  | null: false               |
+| birthday            | date    | null: false               |
+| age                 | integer | null: false               |
 
-* Ruby version
 
-* System dependencies
+### Association
+- has_many :user_groups
+- has_many :groups, through: :user_groups
+- has_many :comments
 
-* Configuration
 
-* Database creation
+## groupsテーブル
 
-* Database initialization
+| Column             | Type       | Options         |
+| ------------------ | ---------- | --------------- |
+| name               | string     | null: false     |
+| prefecture_id      | integer    | null: false     |
+| city               | string     | null: false     |
+| introduction       | text       | null: false     |
 
-* How to run the test suite
+### Association
+- has_many :user_groups
+- has_many :users, through: :user_groups
+- has_many :comments
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## user_groups テーブル
 
-* ...
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| group  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :group
+
+### Association
+- has_one :buyer
+- belongs_to :user
+
+
+## messages テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| group   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :group
