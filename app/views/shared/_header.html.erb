@@ -1,0 +1,13 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class='trafri-logo-contents'>
+    <%= link_to "Trafri", "#", class:"trafri" %>
+  </div>
+  <ul class='lists'>
+    <%# ユーザーのログイン有無で表示を変える %>
+      <li><%#= link_to "ユーザー名", "#", class: "user-nickname" %></li>
+      <li><%#= link_to 'ログアウト', "#", method: "#", class: "logout" %></li>
+      <li><%= link_to 'ログイン', "#", class: "login" %></li>
+      <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+  </ul>
+</header>
