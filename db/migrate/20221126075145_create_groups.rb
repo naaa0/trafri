@@ -5,6 +5,7 @@ class CreateGroups < ActiveRecord::Migration[6.0]
       t.integer :prefecture_id,  null: false
       t.string  :city,           null: false
       t.text    :introduction,   null: false
+      t.references  :user, null:false, foreign_key: true
       t.timestamps
     end
   end

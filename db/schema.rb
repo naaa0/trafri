@@ -38,17 +38,10 @@ ActiveRecord::Schema.define(version: 2022_11_28_075004) do
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.text "introduction", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["group_id"], name: "index_user_groups_on_group_id"
-    t.index ["user_id"], name: "index_user_groups_on_user_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,6 +60,5 @@ ActiveRecord::Schema.define(version: 2022_11_28_075004) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "user_groups", "groups"
-  add_foreign_key "user_groups", "users"
+  add_foreign_key "groups", "users"
 end
