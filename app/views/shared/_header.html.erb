@@ -5,6 +5,7 @@
   </div>
   <ul class='lists'>
     <% if user_signed_in? %>
+      <li><%= link_to "グループ作成", new_group_path, class: "new-group" %>
       <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     <% else %>

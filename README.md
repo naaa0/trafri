@@ -12,42 +12,24 @@
 
 
 ### Association
-- has_many :user_groups
-- has_many :groups, through: :user_groups
-- has_many :comments
+- belongs_to :user
+- has_many :messages
 
 
 ## groupsテーブル
 
-| Column             | Type       | Options         |
-| ------------------ | ---------- | --------------- |
-| name               | string     | null: false     |
-| prefecture_id      | integer    | null: false     |
-| city               | string     | null: false     |
-| introduction       | text       | null: false     |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ---------------                |
+| name               | string     | null: false                    |
+| prefecture_id      | integer    | null: false                    |
+| city               | string     | null: false                    |
+| introduction       | text       | null: false                    |
+| user               | references | null: false, foreign_key: true |
+
 
 ### Association
-- has_many :user_groups
-- has_many :users, through: :user_groups
-- has_many :comments
-
-
-## user_groups テーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| group  | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :group
-
-### Association
-- has_one :buyer
-- belongs_to :user
-
+- has_many :groups
+- has_many :messages
 
 ## messages テーブル
 
