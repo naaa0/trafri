@@ -32,6 +32,8 @@
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
+  margin-right: 10px;
+  list-style-type: none;
 }
 
 .group-img-content {
