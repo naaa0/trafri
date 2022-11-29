@@ -1,4 +1,33 @@
 <%= render "shared/header" %>
-<div class = main>
+<div class = "main">
+  <%# グループ一覧 %>
+  <div class='group-contents'>
+    <h2 class='title'>グループ一覧</h2>
+    <div class="subtitle">
+    </div>
+    <ul class='group-lists'>
+      <% @group.each do |group| %>
+        <li class='list'>
+        <%#= link_to "#" do %>
+            <div class='group-img-content'>
+              <%= image_tag group.image, class: "group-img" %>
+            </div>
+            <div class='group-info'>
+              <h3 class='group-name'>
+                <span>グループ名：<%= group.name %></span>
+              </h3>
+              <div class="group-author">
+                <span>作成者：<%= group.user.nickname %></span>
+              </div>
+              <div class='group-place'>
+                <span>活動拠点：<%= group.prefecture.name %><%= group.city %></span>
+              </div>
+            </div>
+          <%# end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# /グループ一覧 %>
 </div>
 <%= render "shared/footer" %>
