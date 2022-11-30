@@ -11,6 +11,7 @@
   font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
+  text-align: center;
 }
 
 .group-contents>.subtitle {
@@ -50,6 +51,19 @@
   height: 33vh;
 }
 
+.group-lists>.list-initial {
+  width: 76vh;
+  padding: 1vw;
+  background-color: #FFF;
+  margin-right: 10px;
+  list-style-type: none;
+}
+
+.group-img-initial {
+  width: 40vw;
+  height: 50vh;
+}
+
 .group-info {
   background-color: #FFF;
   color: black;
@@ -58,6 +72,12 @@
 
 .group-name {
   font-size: 2.5vh;
+}
+
+.group-name-initial {
+  font-size: 2.5vh;
+  text-align: center;
+  text-decoration: none;
 }
 
 .group-place {
