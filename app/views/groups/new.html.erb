@@ -5,7 +5,7 @@
     <%= form_with model: @group, local: true do |f| %>
 
     <%# エラーメッセージ%>
-    <%#= render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <%# グループ画像 %>
     <div class="img-upload">
