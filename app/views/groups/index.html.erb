@@ -2,13 +2,13 @@
 <div class = "main">
   <%# グループ一覧 %>
   <div class='group-contents'>
-    <h2 class='title'>グループ一覧</h2>
+    <h2 class='title'>TOP PAGE</h2>
     <div class="subtitle">
     </div>
     <ul class='group-lists'>
       <% @group.each do |group| %>
         <li class='list'>
-        <%= link_to group_path(group.id), class: "group_show" do %>
+          <%= link_to group_path(group.id), class: "group_show" do %>
             <div class='group-img-content'>
               <%= image_tag group.image, class: "group-img" %>
             </div>
@@ -23,6 +23,18 @@
                 <span>活動拠点：<%= group.prefecture.name %><%= group.city %></span>
               </div>
             </div>
+          <% end %>
+        </li>
+      <% end %>
+      <% unless Group.exists? %>
+        <li class='list-initial'>
+          <%= link_to new_group_path, class: "group_show" do %>
+          <div class='group-info'>
+            <h2 class='group-name-initial'>
+              トレーニング仲間を募集してみよう！
+            </h2>
+          </div>
+          <%= image_tag src="/assets/team.jpg", class: "group-img-initial" %>
           <% end %>
         </li>
       <% end %>
