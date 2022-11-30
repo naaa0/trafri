@@ -1,11 +1,11 @@
 <%= render "shared/header" %>
 <div class="groups-contents">
   <div class="groups-main">
-    <h2 class="groups-title">グループの新規作成</h2>
+    <h2 class="groups-title">グループの編集</h2>
     <%= form_with model: @group, local: true do |f| %>
 
     <%# エラーメッセージ%>
-    <%= render 'shared/error_messages', model: f.object %>
+    <%#= render 'shared/error_messages', model: f.object %>
 
     <%# グループ画像 %>
     <div class="img-upload">
@@ -58,8 +58,8 @@
 
     <%# 下部ボタン %>
     <div class="make-btn-contents">
-      <%= f.submit "作成する" ,class:"make-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= f.submit "編集する" ,class:"make-btn" %>
+      <%=link_to 'もどる', group_path(@group.id), class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
