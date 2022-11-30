@@ -1,0 +1,69 @@
+<%= render "shared/header" %>
+<div class="groups-contents">
+  <div class="groups-main">
+    <h2 class="groups-title">グループの編集</h2>
+    <%= form_with model: @group, local: true do |f| %>
+
+    <%# エラーメッセージ%>
+    <%#= render 'shared/error_messages', model: f.object %>
+
+    <%# グループ画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        グループ画像
+        <span class="indispensable">任意</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"group-image" %>
+      </div>
+    </div>
+    <%# /グループ画像 %>
+    <%# グループ名とグループ紹介 %>
+    <div class="new-groups">
+      <div class="weight-bold-text">
+        グループ名
+        <span class="indispensable">必須(40字以内)</span>
+      </div>
+      <%= f.text_area :name, class:"groups-text", id:"group-name", placeholder:"グループ名", maxlength:"40" %>
+      <div class="groups-explain">
+        <div class="weight-bold-text">
+          グループの紹介
+          <span class="indispensable">必須(1,000字以内)</span>
+        </div>
+        <%= f.text_area :introduction, class:"groups-text", id:"group-info", placeholder:"グループの紹介文（トレーニング頻度や活動拠点やグループの年齢層など)" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /グループ名とグループ紹介 %>
+
+    <%# グループの詳細 %>
+    <div class="groups-detail">
+      <div class="weight-bold-text">グループの詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          活動拠点
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"group-prefecture"}) %>
+        <div class="weight-bold-text">
+          活動拠点の都市
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :city, class:"groups-text", id:"group-city", placeholder:"市町村", maxlength:"40" %>
+      </div>
+    </div>
+    <%# グループの詳細 %>
+
+    <%# 下部ボタン %>
+    <div class="make-btn-contents">
+      <%= f.submit "編集する" ,class:"make-btn" %>
+      <%=link_to 'もどる', group_path(@group.id), class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>
