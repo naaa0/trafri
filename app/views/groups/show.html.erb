@@ -1,0 +1,39 @@
+<%= render "shared/header" %>
+
+<%# グループの概要 %>
+<div class="group-show">
+  <div class="group-box">
+    <h2 class="name">
+      <%= @group.name %>
+    </h2>
+    <div class="group-img-content">
+      <%= image_tag @group.image ,class:"group-box-img" %>
+    </div>
+
+    <% if user_signed_in? && current_user.id == @group.user.id %>
+      <%= link_to "編集", edit_group_path(@group.id), method: :get, class: "group-red-btn" %>
+      <p class="or-text">or</p>
+      <%= link_to "削除", group_path(@group.id), method: :delete, class:"group-destroy" %>
+    <% else %>
+    <% end %>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-group">グループリーダー</th>
+          <td class="detail-value"><%= @group.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-group">活動拠点</th>
+          <td class="detail-value"><%= @group.prefecture.name %><%= @group.city %></td>
+        </tr>
+        <tr>
+          <th class="detail-group">グループの詳細</th>
+          <td class="detail-value"><%= @group.introduction %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%# /グループの概要 %>
+
+<%= render "shared/footer" %>
