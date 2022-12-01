@@ -1,0 +1,107 @@
+.group-name {
+  background-color: #FAFAFA;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* メッセージ表示画面 */
+.messages {
+  background-color: #FAFAFA;
+  height: 100vh;
+  padding: 46px 40px 0;
+  overflow: scroll;
+}
+
+.message {
+  margin: 10px 300px 0;
+}
+
+/* 投稿者のメッセージ */
+.upper-message-right{
+  display: flex;
+  justify-content: right;
+}
+
+.message-user-right{
+  font-size: 16px;
+  color: #434A54;
+  text-align: right;
+}
+
+.message-date-right {
+  font-size: 12px;
+  color: #999;
+  padding-left: 10px;
+  text-align: right;
+}
+
+.message-content-right {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
+  text-align: right;
+}
+/* 投稿者のメッセージ */
+.upper-message {
+  display: flex;}
+
+.message-user{
+  font-size: 16px;
+  color: #434A54;
+}
+
+.message-date {
+  font-size: 12px;
+  color: #999;
+  padding-left: 10px;
+}
+
+.message-content a{
+  font-size: 14px;
+  color: #434A54;
+  text-decoration: none;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+/* メッセージ表示画面 */
+
+/* メッセージ投稿画面 */
+.form-message {
+  background-color: #DDDDDD;
+  height: 90px;
+  padding: 20px 40px;
+  display: flex;
+}
+
+.form-message-input {
+  background-color: white;
+  width: 100%;
+  display: flex;
+}
+
+.form-group-message {
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.form-submit {
+  background-color: #38AEF0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+/* メッセージ投稿画面 */
