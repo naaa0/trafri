@@ -56,6 +56,16 @@
   padding: 2vh 10vw;
 }
 
+.group-blue-btn {
+  text-align: center;
+  background-color: #708090;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
 .detail-table {
   margin-bottom: 30px;
   width: 100%;
