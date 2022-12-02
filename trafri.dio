@@ -1,0 +1,63 @@
+<mxfile host="65bd71144e">
+    <diagram id="myD6S2K9EAtqcTi8QfsP" name="ページ1">
+        <mxGraphModel dx="1414" dy="668" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="groups" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="-410" y="80" width="210" height="186" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="(・image)&lt;br&gt;・name&lt;br&gt;・prefecture_id&lt;br&gt;・city&lt;br&gt;・introduction&lt;br&gt;・user" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=default;" parent="2" vertex="1">
+                    <mxGeometry y="26" width="210" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="&lt;div&gt;&lt;span&gt;・belongs_to :user&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;・has_many :comments&lt;/span&gt;&lt;/div&gt;" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;align=left;direction=west;" parent="2" vertex="1">
+                    <mxGeometry y="116" width="210" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="-740" y="80" width="210" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="・nickname&#10;・email&#10;・encrypted_passwword&#10;・birthday&#10;・age&#10;" style="text;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fillColor=default;" parent="6" vertex="1">
+                    <mxGeometry y="26" width="210" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="messages" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#d5e8d4;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="-530" y="320" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="・content&#10;・user&#10;・group" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="12" vertex="1">
+                    <mxGeometry y="26" width="140" height="54" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;endArrow=ERoneToMany;endFill=0;startArrow=ERone;startFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="9" target="11" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-500" y="160" as="sourcePoint"/>
+                        <mxPoint x="-470" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=segmentEdgeStyle;endArrow=ERoneToMany;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="27" target="14" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-680" y="260" as="sourcePoint"/>
+                        <mxPoint x="-380" y="210" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-635" y="373"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="edgeStyle=segmentEdgeStyle;endArrow=ERoneToMany;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endFill=0;startArrow=ERone;startFill=0;exitX=0.52;exitY=0.023;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="29" target="14" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-310" y="270" as="sourcePoint"/>
+                        <mxPoint x="-118.19999999999999" y="326.15" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-309" y="270"/>
+                            <mxPoint x="-310" y="270"/>
+                            <mxPoint x="-310" y="373"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="&lt;div&gt;&lt;span&gt;・has_many :groups&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;・has_many :comments&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="-740" y="190" width="210" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="・belongs_to :user&lt;br&gt;・belong_to :group" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="-530" y="400" width="140" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
